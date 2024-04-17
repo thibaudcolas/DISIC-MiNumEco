@@ -1,0 +1,76 @@
+---
+layout: layouts/ecodesign-framework.njk
+lang: en
+title: "RGESN translation in English: Ecodesign framework"
+image: /img/referentiel-ecoconception.png
+description: Référentiel mené dans le cadre de la mission interministérielle numérique écoresponsable et co-pilotée par la Direction interministérielle du numérique (DINUM), le Ministère de la Transition Écologique, l’ADEME et l’Institut du Numérique Responsable.
+type: publication
+focus: true
+date: 2022-11-28
+pagination:
+  data: ecodesign-framework
+  size: 1000
+  alias: critere
+eleventyNavigation:
+  key: ecodesign-framework
+  parent: publications
+  title: "Ecodesign framework (English translation of RGESN)"
+  date: 2022-11-28
+  image: /img/referentiel-ecoconception.png
+  order: 90
+---
+
+<p>View the original in French: <a lang="fr" href="https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/">Référentiel général d'écoconception de services numériques (RGESN)</a></p>
+
+<p>This is a draft from pull request <a href="https://github.com/DISIC/MiNumEco/pull/99">MiNumEco#99: Ecodesign framework english translation<a>.</p>
+
+
+<nav class="fr-summary" role="navigation" aria-labelledby="fr-summary-title">
+    <div class="fr-summary__title" id="fr-summary-title">Sommaire</div>
+    <ol class="fr-summary__list">
+    {% set thematique = null %}
+    {%- for item in pagination.items %}
+      {% if item.thematique != thematique %}
+        {% set thematique = item.thematique %}
+        <li>
+          <a class="fr-summary__link" href="#{{ thematique | slug }}">{{ thematique }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+    </ol>
+</nav>
+
+{% set thematique = null %}
+
+{%- for item in pagination.items %}
+  {% if item.thematique != thematique %}
+    {% if null != thematique %}</ul>{% endif %}
+    {% set thematique = item.thematique %}
+    <h2 id="{{ thematique | slug }}">{{ thematique }}</h2>
+    <ul class="fr-accordions-group">
+  {% endif %}
+
+  <li>
+    <section class="fr-accordion">
+      <h3 class="fr-accordion__title">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-{{ item.numero }}">{{ item.numero }} – {{ item.critere }}</button>
+      </h3>
+      <div class="fr-collapse" id="accordion-{{ item.numero }}">
+        <p><b>Goal</b></p>
+
+        <div class="fr-highlight">{{ item.objectif | markdown | safe }}</div>
+
+        <p><b>Implementation</b></p>
+
+        <div class="fr-highlight">{{ item.miseEnOeuvre | markdown | safe }}</div>
+
+        <p><b>Assessment methodology</b></p>
+
+        <div class="fr-highlight">{{ item.controle | markdown | safe }}</div>
+
+        <p><a href="/publications/ecodesign-framework/critere/{{ item.numero | slug }}/" class="fr-link fr-fi-arrow-right-line fr-link--icon-left">Permalink</a></p>
+      </div>
+    </section>
+  </li>
+{% endfor -%}
+</ul>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" data-fr-theme>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ ((renderData.title or seoTitle or title) ~ ' - ' ~ metadata.title) or metadata.title }}</title>
+    <meta name="description" content="{{ description or metadata.description }}">
+
+    <meta property="og:title" content="{{ renderData.title or seoTitle or title or metadata.title }}">
+    <meta property="og:description" content="{{ description or metadata.description }}">
+    {% if image %}
+    <meta property="og:image" content="{{ image }}">
+    {% endif %}
+
+    <meta property="twitter:title" content="{{ renderData.title or seoTitle or title or metadata.title }}" />
+    <meta property="twitter:description" content="{{ description or metadata.description }}" />
+    <meta property="twitter:creator" content="MiNumEco" />
+    <meta property="twitter:card" content="summary" />
+    {% if image %}
+    <meta property="twitter:image" content="{{ image }}">
+    {% endif %}
+
+    <link rel="stylesheet" href="{{ '/css/dsfr.min.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
+
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" href="/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/favicons/manifest.webmanifest" crossorigin="use-credentials">
+  </head>
+  <body>
+    <div class="fr-skiplinks">
+        <nav class="fr-container" role="navigation" aria-label="Accès rapide">
+            <ul class="fr-skiplinks__list">
+                <li>
+                    <a class="fr-link" href="#contenu">Contenu</a>
+                </li>
+                <li>
+                    <a class="fr-link" href="#header-navigation">Menu</a>
+                </li>
+                <li>
+                    <a class="fr-link" href="#footer">Pied de page</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <main role="main">
+        <div id="contenu" class="fr-container fr-py-3w">
+        {{ content | safe }}
+        </div>
+    </main>
+    <script src="/js/dsfr.module.min.js"></script>
+
+{% if extrajs %}
+    <script src="{{ extrajs }}"></script>
+{% endif %}
+  </body>
+</html>
