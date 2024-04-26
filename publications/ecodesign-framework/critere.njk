@@ -6,28 +6,36 @@ eleventyExcludeFromCollections: true
 date: 2022-11-28
 image: /img/referentiel-ecoconception.png
 pagination:
-    data: ecodesign-framework
+    data: en-fr
     size: 1
     alias: critere
-permalink: "/publications/ecodesign-framework/critere/{{ critere.numero | slug }}/"
+permalink: "/publications/ecodesign-framework/critere/{{ critere.numero_en | slug }}/"
 eleventyComputed:
-    title: "{{ critere.critere | safe }}"
+    title: "{{ critere.critere_en | safe }}"
 ---
 
 <p>
-    <a href="/publications/ecodesign-framework/#{{ critere.thematique | slug }}" class="fr-tag">{{ critere.thematique }}</a>
+    <a href="/publications/ecodesign-framework/#{{ critere.thematique_en | slug }}" class="fr-tag">{{ critere.thematique_en }} -&nbsp;<span lang="fr">{{ critere.thematique_fr }}</span></a>
 </p>
 
-<p>View the original document in French: <a href="https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/critere/{{ critere.numero | slug }}/">criterion {{ critere.numero | slug }}</a> </p>
+<dl>
+<dt>Permalink - translation from <a href="https://github.com/DISIC/MiNumEco/pull/99">MiNumEco PR#99</a></dt>
+<dd><a href="/publications/ecodesign-framework/critere/{{ critere.numero_en | slug }}/">{{ critere.numero_en | slug }} - {{ critere.critere_en }}</a></dd>
+<dt>Original in French</dt>
+<dd><a lang="fr" href="https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/critere/{{ critere.numero_fr | slug }}/"><span lang="fr">{{ critere.numero_fr | slug }} - {{ critere.critere_fr }}</span></a></dd>
+</dl>
 
-<h2>Goal</h2>
+<h2>Goal - <span lang="fr">Objectif</span></h2>
 
-<p>{{ critere.objectif | markdown | safe }}</p>
+<p>{{ critere.objectif_en | markdown | safe }}</p>
+<div lang="fr"><p>{{ critere.objectif_fr | markdown | safe }}</p></div>
 
-<h2>Implementation</h2>
+<h2>Implementation - <span lang="fr">Mise en œuvre</span></h2>
 
-<p>{{ critere.miseEnOeuvre | markdown | safe }}</p>
+<p>{{ critere.miseEnOeuvre_en | markdown | safe }}</p>
+<div lang="fr"><p>{{ critere.miseEnOeuvre_fr | markdown | safe }}</p></div>
 
-<h2>Assessment methodology</h2>
+<h2>Assessment methodology - <span lang="fr">Moyen de test ou de contrôle</span></h2>
 
-<p>{{ critere.controle | markdown | safe }}</p>
+<p>{{ critere.controle_en | markdown | safe }}</p>
+<div lang="fr"><p>{{ critere.controle_fr | markdown | safe }}</p></div>

@@ -8,7 +8,7 @@ type: publication
 focus: true
 date: 2022-11-28
 pagination:
-  data: ecodesign-framework
+  data: en-fr
   size: 1000
   alias: critere
 eleventyNavigation:
@@ -20,9 +20,14 @@ eleventyNavigation:
   order: 90
 ---
 
-<p>View the original in French: <a lang="fr" href="https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/">Référentiel général d'écoconception de services numériques (RGESN)</a></p>
-
-<p>This is a draft from pull request <a href="https://github.com/DISIC/MiNumEco/pull/99">MiNumEco#99: Ecodesign framework english translation<a>.</p>
+<dl>
+<dt>Permalink - translation from <a href="https://github.com/DISIC/MiNumEco/pull/99">MiNumEco PR#99</a></dt>
+<dd><a href="/publications/ecodesign-framework/">RGESN translation in English: Ecodesign framework</a></dd>
+<dt>Original in French</dt>
+<dd><a lang="fr" href="https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/">Référentiel général d'écoconception de services numériques (RGESN)</a></dd>
+<dt>CSV export</dt>
+<dd><a href="/publications/ecodesign-framework/export/ecodesign-framework-version-v1.csv">ecodesign framework version v1 (CSV, 132kB)</a></dd>
+</dl>
 
 
 <nav class="fr-summary" role="navigation" aria-labelledby="fr-summary-title">
@@ -30,10 +35,10 @@ eleventyNavigation:
     <ol class="fr-summary__list">
     {% set thematique = null %}
     {%- for item in pagination.items %}
-      {% if item.thematique != thematique %}
-        {% set thematique = item.thematique %}
+      {% if item.thematique_en != thematique %}
+        {% set thematique = item.thematique_en %}
         <li>
-          <a class="fr-summary__link" href="#{{ thematique | slug }}">{{ thematique }}</a>
+          <a class="fr-summary__link" href="#{{ thematique | slug }}">{{ thematique }} – <span lang="fr">{{ item.thematique_fr }}</span></a>
         </li>
       {% endif %}
     {% endfor %}
@@ -43,32 +48,36 @@ eleventyNavigation:
 {% set thematique = null %}
 
 {%- for item in pagination.items %}
-  {% if item.thematique != thematique %}
+  {% if item.thematique_en != thematique %}
     {% if null != thematique %}</ul>{% endif %}
-    {% set thematique = item.thematique %}
-    <h2 id="{{ thematique | slug }}">{{ thematique }}</h2>
+    {% set thematique = item.thematique_en %}
+    <h2 id="{{ thematique | slug }}">{{ thematique }} – <span lang="fr">{{ item.thematique_fr }}</span></h2>
+    <p class="fr-text--sm">{{ metadata.referentielEcoconception.thematique[item.thematique_fr | slug].description_en }}</p>
+    <div lang="fr">
+      <p class="fr-text--sm">{{ metadata.referentielEcoconception.thematique[item.thematique_fr | slug].description_fr }}</p>
+    </div>
     <ul class="fr-accordions-group">
   {% endif %}
 
   <li>
     <section class="fr-accordion">
       <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-{{ item.numero }}">{{ item.numero }} – {{ item.critere }}</button>
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-{{ item.numero_en }}"><div>{{ item.numero_en }}</div><div>{{ item.critere_en }}</div><div lang="fr">{{ item.critere_fr }}</div></button>
       </h3>
-      <div class="fr-collapse" id="accordion-{{ item.numero }}">
-        <p><b>Goal</b></p>
+      <div class="fr-collapse" id="accordion-{{ item.numero_en }}">
+        <p><b>Goal</b> – <span lang="fr">Objectif</span></p>
 
-        <div class="fr-highlight">{{ item.objectif | markdown | safe }}</div>
+        <div class="fr-highlight"><div>{{ item.objectif_en | markdown | safe }}</div><div lang="fr">{{ item.objectif_fr | markdown | safe }}</div></div>
 
-        <p><b>Implementation</b></p>
+        <p><b>Implementation</b> – <span lang="fr">Mise en œuvre</span></p>
 
-        <div class="fr-highlight">{{ item.miseEnOeuvre | markdown | safe }}</div>
+        <div class="fr-highlight"><div>{{ item.miseEnOeuvre_en | markdown | safe }}</div><div lang="fr">{{ item.miseEnOeuvre_fr | markdown | safe }}</div></div>
 
-        <p><b>Assessment methodology</b></p>
+        <p><b>Assessment methodology</b> – <span lang="fr">Moyen de test ou de contrôle</span></p>
 
-        <div class="fr-highlight">{{ item.controle | markdown | safe }}</div>
+        <div class="fr-highlight"><div>{{ item.controle_en | markdown | safe }}</div><div lang="fr">{{ item.controle_fr | markdown | safe }}</div></div>
 
-        <p><a href="/publications/ecodesign-framework/critere/{{ item.numero | slug }}/" class="fr-link fr-fi-arrow-right-line fr-link--icon-left">Permalink</a></p>
+        <p><a href="/publications/ecodesign-framework/critere/{{ item.numero_en | slug }}/" class="fr-link fr-fi-arrow-right-line fr-link--icon-left">Permalink</a></p>
       </div>
     </section>
   </li>

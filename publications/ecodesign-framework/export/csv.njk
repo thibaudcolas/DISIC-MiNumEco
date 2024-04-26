@@ -1,0 +1,14 @@
+---
+permalink: "/publications/ecodesign-framework/export/ecodesign-framework-version-{{ metadata.referentielEcoconception.version }}.csv"
+eleventyExcludeFromCollections: true
+pagination:
+    data: en-fr
+    size: 1000
+    alias: critere
+---
+"id","theme (EN)","thematique (FR)","criterion (EN)","critere (FR)","goal (EN)","objectif (FR)","implementation (EN)","miseEnOeuvre (FR)","assessment methodology (EN)","controle (FR)","url (EN)","url (FR)"
+{% for item in pagination.items %}
+{%- set absolutePostUrl %}{{ metadata.url ~ 'publications/ecodesign-framework/critere/' ~ (item.numero_en | slug) ~ '/' }}{% endset -%}
+{%- set originUrl %}{{ 'https://ecoresponsable.numerique.gouv.fr/' ~ 'publications/referentiel-general-ecoconception/critere/' ~ (item.numero_en | slug) ~ '/' }}{% endset -%}
+{{ item.numero_en | dump | safe }},{{ item.thematique_en | dump | safe }},{{ item.thematique_fr | dump | safe }},{{ item.critere_en | dump | safe }},{{ item.critere_fr | dump | safe }},{{ item.objectif_en | dump | safe }},{{ item.objectif_fr | dump | safe }},{{ item.miseEnOeuvre_en | dump | safe }},{{ item.miseEnOeuvre_fr | dump | safe }},{{ item.controle_en | dump | safe }},{{ item.controle_fr | dump | safe }},"{{ absolutePostUrl }}","{{ originUrl }}"
+{% endfor %}

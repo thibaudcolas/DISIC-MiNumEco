@@ -22,29 +22,8 @@
 
     <link rel="stylesheet" href="{{ '/css/dsfr.min.css' | url }}">
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
-
-    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
-    <link rel="icon" href="/favicons/favicon.svg" type="image/svg+xml">
-    <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="/favicons/manifest.webmanifest" crossorigin="use-credentials">
   </head>
   <body>
-    <div class="fr-skiplinks">
-        <nav class="fr-container" role="navigation" aria-label="Accès rapide">
-            <ul class="fr-skiplinks__list">
-                <li>
-                    <a class="fr-link" href="#contenu">Contenu</a>
-                </li>
-                <li>
-                    <a class="fr-link" href="#header-navigation">Menu</a>
-                </li>
-                <li>
-                    <a class="fr-link" href="#footer">Pied de page</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
     <main role="main">
         <div id="contenu" class="fr-container fr-py-3w">
         {{ content | safe }}

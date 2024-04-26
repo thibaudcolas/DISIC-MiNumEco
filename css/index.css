@@ -1,12 +1,13 @@
 [data-fr-theme="dark"] .fr-header__operator > img {
-  content:url(/img/logo-blanc.png);
+  content: url(/img/logo-blanc.png);
 }
 
 iframe {
   border: none;
 }
 
-#contenu img, #contenu iframe {
+#contenu img,
+#contenu iframe {
   max-width: 100%;
   display: block;
   margin: 0 auto;
@@ -28,7 +29,11 @@ iframe {
   text-align: center !important;
 }
 
-main h2, main h3, main h4, main h5, main h6 {
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
   margin-top: 3rem;
 }
 
@@ -40,7 +45,12 @@ main h4 {
   font-size: 1.2rem;
 }
 
-h2.fr-card__title, h2.fr-tile__title, h2.fr-callout__title, h3.fr-card__title, h3.fr-tile__title, h3.fr-callout__title {
+h2.fr-card__title,
+h2.fr-tile__title,
+h2.fr-callout__title,
+h3.fr-card__title,
+h3.fr-tile__title,
+h3.fr-callout__title {
   margin-top: 0;
 }
 
@@ -92,4 +102,36 @@ h4.fr-tile__title {
 
 .mise-en-avant h2 {
   margin-top: 1rem;
+}
+
+span[lang],
+div[lang] {
+  font-style: italic;
+}
+
+.fr-accordion__btn {
+  display: grid;
+  grid-template-columns: min-content 1fr 1fr min-content;
+  align-items: flex-start;
+  gap: 0.25em;
+  padding-inline: 0;
+
+  & > span:first-of-type {
+    margin-inline-end: 0.25em;
+  }
+}
+
+.fr-accordion__btn::before {
+  display: none;
+}
+
+.fr-accordion__btn::after {
+  content: "";
+  font: normal 700 normal 1.5rem / 1 dsfr-icon;
+  font-size: 1rem;
+  font-weight: 400;
+  font-weight: 700;
+  margin-left: auto;
+  margin-right: 0;
+  align-self: center;
 }

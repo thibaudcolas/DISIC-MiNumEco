@@ -1,7 +1,7 @@
 {
   "title": "Numérique écoresponsable",
-  "url": "https://ecoresponsable.numerique.gouv.fr/",
-  "description": "MiNumEco, la mission interministérielle numérique écoresponsable pilotée par la DINUM et le Ministère de la Transition écologique pour réduire les impacts environnementaux du numérique",
+  "url": "https://minumeco-99-preview.netlify.app/",
+  "description_fr": "MiNumEco, la mission interministérielle numérique écoresponsable pilotée par la DINUM et le Ministère de la Transition écologique pour réduire les impacts environnementaux du numérique",
   "feed": {
     "subtitle": "MiNumEco, la mission interministérielle numérique écoresponsable pilotée par la DINUM et le Ministère de la Transition écologique pour réduire les impacts environnementaux du numérique",
     "filename": "feed.xml",
@@ -44,28 +44,36 @@
     "dataGouvUrl": "https://www.data.gouv.fr/fr/datasets/referentiel-general-decoconception-de-services-numeriques/",
     "thematique": {
       "strategie": {
-        "description": "Elle permet de déterminer et de suivre la pertinence, les enjeux et le pilotage de la conception du service numérique."
+        "description_fr": "Elle permet de déterminer et de suivre la pertinence, les enjeux et le pilotage de la conception du service numérique.",
+        "description_en": "It allows for determining and tracking the relevance, stakes, and management of the design of the digital service."
       },
       "specifications": {
-        "description": "Indépendamment du type de gestion projet, cette thématique regroupe les éléments de cadrage projet, les moyens mis en œuvre, les objectifs et contraintes du projet sur toute la durée de vie du service numérique."
+        "description_fr": "Indépendamment du type de gestion projet, cette thématique regroupe les éléments de cadrage projet, les moyens mis en œuvre, les objectifs et contraintes du projet sur toute la durée de vie du service numérique.",
+        "description_en": "Regardless of the project management methodology, this theme encompasses project framework elements, deployed resources, the project's goals and constraints throughout the lifespan of the digital service."
       },
       "uxui": {
-        "description": "Les étapes et méthodes de conception des services numériques pour définir les meilleures solutions d'interactions destinées aux utilisateurs."
+        "description_fr": "Les étapes et méthodes de conception des services numériques pour définir les meilleures solutions d'interactions destinées aux utilisateurs.",
+        "description_en": "The steps and methodologies of designing digital services to define the best interaction solutions for users."
       },
       "contenus": {
-        "description": "Tous les documents et médias informatifs ajoutés au service numérique par des personnes contributrices et disponibles pour l'utilisateur final."
+        "description_fr": "Tous les documents et médias informatifs ajoutés au service numérique par des personnes contributrices et disponibles pour l'utilisateur final.",
+        "description_en": "All documents and multimedia information added to the digital service by individual contributors and available for the end user."
       },
       "architecture": {
-        "description": "La stratégie de conception et l'articulation des composants applicatifs entre le frontend et le backend."
+        "description_fr": "La stratégie de conception et l'articulation des composants applicatifs entre le frontend et le backend.",
+        "description_en": "The design strategy and the coordination of application components between the frontend and the backend."
       },
       "frontend": {
-        "description": "Ensemble des composants en opération sur un terminal utilisateur pour permettre l'utilisation d'un service numérique."
+        "description_fr": "Ensemble des composants en opération sur un terminal utilisateur pour permettre l'utilisation d'un service numérique.",
+        "description_en": "All components in operation on a user terminal to enable the use of a digital service."
       },
       "backend": {
-        "description": "Ensemble des composants en opération côté serveur pour permettre le fonctionnement d'un service numérique."
+        "description_fr": "Ensemble des composants en opération côté serveur pour permettre le fonctionnement d'un service numérique.",
+        "description_en": "All components in operation on the server side to enable the functioning of a digital service."
       },
       "hebergement": {
-        "description": "Moyens mis en œuvre côté serveur pour permettre l'utilisation d'un service numérique."
+        "description_fr": "Moyens mis en œuvre côté serveur pour permettre l'utilisation d'un service numérique.",
+        "description_en": "Resources deployed on the server side to enable the use of a digital service."
       }
     }
   }
